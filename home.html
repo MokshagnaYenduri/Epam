@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Smart Ring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #627bde;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #80ceff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        h1 {
+            color: #eac560;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .image {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f0f8ff;
+        }
+        .dark-mode .content {
+            background-color: #444;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        .switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .switch input {
+            display: none;
+        }
+        .slider {
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 25px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .slider:before {
+            content: '';
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        input:checked + .slider {
+            background-color: #2c3e50;
+        }
+        input:checked + .slider:before {
+            transform: translateX(25px);
+        }
+    </style>
+</head>
+<body>
+    <div class="switch">
+        <input type="checkbox" id="modeSwitch">
+        <label class="slider" for="modeSwitch"></label>
+    </div>
+    <div class="content">
+        <h1>Pulse Smart Ring</h1>
+        <p>The Pulse Smart Ring is a revolutionary piece of wearable technology designed to keep you connected and healthy. With its sleek design and advanced features, Pulse is the perfect companion for your daily life.</p>
+        <p>Track your fitness, monitor your heart rate, and stay on top of your notifications with ease. Pulse seamlessly integrates with your smartphone, providing you with real-time updates and insights.</p>
+        <p>Experience the future of wearable technology with Pulse. Stay connected, stay healthy, and stay stylish with the smart ring that does it all.</p>
+        <div class="image">
+            <img src="pulse.png" alt="Pulse Smart Ring">
+        </div>
+    </div>
+    <script>
+        const modeSwitch = document.getElementById('modeSwitch');
+        modeSwitch.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
